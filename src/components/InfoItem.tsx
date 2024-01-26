@@ -13,7 +13,7 @@ interface InfoItemProps {
 
 const InfoItem = ({Icon, Chart, trendstatus, label, labelno}: InfoItemProps) => {
   return (
-      <div className="p-3 rounded-xl bg-white w-66 space-y-8 shadow-sm px-4">
+      <div className="p-3 rounded-xl bg-white w-[19rem] space-y-8 shadow-sm px-4">
             <div className=" flex justify-between">
               <div className="p-2 border rounded-full w-10 h-10 flex items-center justify-center">
                 {Icon}

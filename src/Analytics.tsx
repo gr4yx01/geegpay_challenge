@@ -10,7 +10,8 @@ import FourChart from "./components/chart/FourChart";
 import InfoItem from "./components/InfoItem";
 import orders from '@/data/order'
 import Order from "@/components/Order";
-
+import platforms from '@/data/platform'
+import Platform from "@/components/Platform";
 
 ChartJS.register(ArcElement, CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
@@ -50,7 +51,7 @@ const Analytics = () => {
   return (
     <div className="flex flex-col space-y-10 pb-10">
       <div className="flex h-[500px] space-x-10">
-      <div className="bg-white p-14 w-[60%] h-full rounded-[14px]">
+      <div className="bg-white p-14 w-[850px] h-full rounded-[14px]">
         <div className="flex justify-between items-center font-plusSans ">
           <span className="font-semibold text-[18px]">Sales Trend</span>
           <div className="flex space-x-5 items-center">
@@ -63,7 +64,9 @@ const Analytics = () => {
         </div>
         <Bar data={data} options={option} />
       </div>
-        <div className="grid grid-cols-2 gap-5 w-[40%]">
+      <div className="flex-1">
+
+        <div className="grid grid-cols-2 gap-10">
           {
             items?.map(({icon, chart, label, labelno, trendstatus}) => (
                 <InfoItem Icon={icon} Chart={chart} label={label} labelno={labelno} trendstatus={trendstatus}/>
@@ -71,8 +74,9 @@ const Analytics = () => {
             }
         </div>
       </div>
+      </div>
        <div className="flex h-[500px] space-x-10">
-      <div className="bg-white p-8 w-[60%] h-full rounded-[14px] overflow-hidden">
+      <div className="bg-white p-8 w-[850px] h-full rounded-[14px] overflow-hidden">
         <div className="flex justify-between items-center font-plusSans ">
           <span className="font-semibold text-[18px]">Last Order</span>
           <div className="flex space-x-5 items-center">
@@ -94,15 +98,15 @@ const Analytics = () => {
           }
         </div>
       </div>
-        <div className="flex-1 p-8 rounded-xl bg-white">
-          <div className=" w-full space-y-8">
+        <div className=" flex-1 p-8 rounded-xl bg-white font-plusSans">
             <div className="flex justify-between items-center">
-              <span>Top Platform</span>
+              <span className="text-lg font-semibold">Top Platform</span>
               <span className="font-medium text-lg text-[#34CAA5]">See All</span>
-            </div>
           </div>
           <div>
-            
+            {platforms?.map(({name, color, amount, percent, progress}) => (
+                <Platform bgColor={color} name={name} percent={percent} amount={amount} progress={progress}/>
+            ))}
           </div>
         </div>
       </div>
