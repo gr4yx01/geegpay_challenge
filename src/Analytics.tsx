@@ -143,7 +143,7 @@ const Analytics = () => {
         <div className="flex flex-col space-y-3 font-medium pt-6 ">
           <div className="flex justify-between  items-center text-[#9CA4AB] text-xs font-medium">
             <span className="w-[100px] flex justify-start">Name</span>
-            <span className="w-[100px] flex justify-start">Date</span>
+            <span className="w-[100px] flex justify-start">Date</span>xs
             <span className="w-[150px] flex justify-start">Amount</span>
             <span className="w-[120px] flex justify-start">Status</span>
             <span className="w-[100px] flex justify-start">Invoice</span>
