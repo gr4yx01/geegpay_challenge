@@ -11,9 +11,9 @@ interface OrderProps {
 
 const Order = ({name, date, url, amount, status}: OrderProps) => {
   return (
-     <div className="flex justify-between items-center text-lg font-plusSans font-medium border-t pt-5">
+     <div className="flex justify-between items-center text-xs lg:text-lg font-plusSans font-medium border-t pt-5">
             <div className="w-[200px] flex justify-start space-x-3 items-center">
-                  <img src={url} alt="" className="w-10 h-10 object-cover rounded-full"/>
+                  <img src={url} alt="" className="w-10 h-10 object-cover rounded-full xs:hidden lg:flex hidden"/>
               <span className="flex ">{name}</span>
             </div>
             <span className="w-[150px] flex justify-start text-[#737373]">{date}</span>

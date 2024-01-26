@@ -13,27 +13,28 @@ interface InfoItemProps {
 
 const InfoItem = ({Icon, Chart, trendstatus, label, labelno}: InfoItemProps) => {
   return (
-      <div className="p-3 rounded-xl bg-white w-[19rem] space-y-8 shadow-sm px-4">
+      <div className="p-4 rounded-xl h-[180px] bg-white space-y-2 shadow-sm">
             <div className=" flex justify-between">
               <div className="p-2 border rounded-full w-10 h-10 flex items-center justify-center">
                 {Icon}
               </div>
-                <div>
+                <div className="pl-4">
                   {Chart}
                 </div> 
             </div>
-            <div className="flex flex-col space-y-2 font-plusSans">
+            <div className="flex flex-col  font-plusSans space-y-1">
               <span className="text-lg font-medium text-[#898989]">{label}</span>
               <span className="text-2xl font-semibold">{labelno}</span>
             </div>
             <div className="flex items-center justify-between space-x-2">
-              <div className="text-[#34CAA5] p-1 px-4 flex items-center justify-center space-x-1 bg-[#34CAA5] rounded-full bg-opacity-20 text-opacity-100">
+              <div className="text-[#34CAA5] p-1 px-3 pt flex items-center justify-center space-x-1 bg-[#34CAA5] rounded-full bg-opacity-20 text-opacity-100 text-xs">
+
                 {trendstatus ? <TrendingUpIcon /> : <TrendingDownIcon />}
-                <span className="font-medium font-plusSans">23.5%</span>
+                <span className="font-medium   font-plusSans">23.5%</span>
               </div>
-              <div>
-                <span className="font-inter text-[#606060]">vs. previous month</span>
-              </div>
+                {/* <div className="">
+                  <span className="text-xs text-[#606060]">vs previous month</span>
+                </div> */}
             </div>
           </div>
   )
